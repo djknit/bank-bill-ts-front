@@ -1,1 +1,7 @@
-export default {}
+function SignUp({
+    
+}) {
+
+}
+
+export default SignUp;
