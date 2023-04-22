@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './style.css';
+import SignUpForm from './SignUpForm';
+import LoginForm from './LoginForm';
 
 function LandingPage({}) {
 
@@ -31,6 +33,13 @@ function LandingPage({}) {
                     >
                         Sign Up
                     </button>
+                </div>
+                <div id="landing-pg-main-form-area">
+                    {isNewUser ? (
+                        <SignUpForm />
+                    ) : (
+                        <LoginForm />
+                    )}
                 </div>
             </div>
         </div>

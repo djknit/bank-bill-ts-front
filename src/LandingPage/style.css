@@ -21,3 +21,10 @@
 #landing-pg-form-selector > .form-selection-option.selected {
     border-style: inset;
 }
+
+#landing-pg-main-form-area {
+    min-width: 320px;
+    max-width: 360px;
+    margin: 1rem auto;
+    border: solid 1px whitesmoke;
+}
