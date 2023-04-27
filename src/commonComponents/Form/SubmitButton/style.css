@@ -1,0 +1,11 @@
+.submit,
+.submit.input {
+    width: auto;
+    text-align: center;
+    box-shadow: #333333 0 0 2px 0.5px;
+}
+
+.submit.input:active {
+    box-shadow: none;
+    box-shadow: #666666 0 0 5px 1px;
+}

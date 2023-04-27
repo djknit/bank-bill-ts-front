@@ -1,0 +1,23 @@
+.label,
+.input {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.input:active,
+.input:focus {
+    box-shadow: #777777 0 0 3px 1px;
+}
+
+.label {
+    margin-bottom: 2px;
+    font-size: 1.1em;
+}
+
+.input {
+    margin-bottom: 1.3rem;
+    padding: 0.5em;
+    font-size: 1.1em;
+}

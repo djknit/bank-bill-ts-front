@@ -1,22 +1,26 @@
 import { TextInputProps } from './types';
+import './style.css';
 
 function TextInput({
-    changeHandler,
     value,
+    setValue,
     label,
     placeholder,
-    name
+    inputId,
+    inputType
 }: TextInputProps) {
     return (
         <>
-            <label htmlFor={name} id={`${name}-label`}>
+            <label htmlFor={inputId} id={`${inputId}-label`} className='label'>
                 {label}
             </label>
             <input
-                onChange={({ target }) => changeHandler(target.value)}
+                onChange={({ target }) => setValue(target.value)}
                 value={value}
-                id={name}
+                id={inputId}
                 placeholder={placeholder}
+                className='input'
+                type={inputType}
             />
         </>
     );

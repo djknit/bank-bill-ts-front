@@ -1,9 +1,10 @@
 type TextInputProps = {
-    changeHandler: (newValue: string) => undefined,
     value: string,
+    setValue: (newValue: string) => void,
     placeholder?: string,
     label: string,
-    name: string
+    inputId: string,
+    inputType?: string
 };
 
 export type {

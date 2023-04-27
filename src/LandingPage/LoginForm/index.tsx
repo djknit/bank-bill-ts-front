@@ -1,6 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Form } from '../../commonComponents';
 import TextInput from '../../commonComponents/Form/TextInput';
+import { login } from '../../util';
+import { UserInfo } from '../../util/data/user/types';
 
 function LoginForm({
     
@@ -11,10 +14,20 @@ function LoginForm({
 
     const [usernameInputValue, setUsernameInputValue] = useState('');
     const [passwordInputValue, setPasswordInputValue] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+
+    const navigate = useNavigate();
 
     const submit = () => {
         console.log('submit');
-        // set loading state
+        setIsLoading(true);
+        login({
+            username: usernameInputValue,
+            password: passwordInputValue
+        })
+        .then((user: UserInfo) => {
+            navigate('/app');
+        });
         // make api call
         // then set userinfo in react app
         // then redirect
@@ -31,17 +44,17 @@ function LoginForm({
                 value={usernameInputValue}
                 setValue={setUsernameInputValue}
                 label='Username'
-                placeholder='Type username here...'
+                placeholder='Your username...'
                 inputId={usernameInputId}
             />
             <TextInput
                 value={passwordInputValue}
                 setValue={setPasswordInputValue}
                 label='Password'
-                placeholder='Enter password...'
+                placeholder='Your password...'
                 inputId={passwordInputId}
+                inputType='password'
             />
-
         </Form>
     );
 }
